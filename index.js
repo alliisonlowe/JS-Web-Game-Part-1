@@ -14,13 +14,17 @@ newImage('assets/pillar.png', 350, 100)
 newImage('assets/crate.png', 150, 200)
 newImage('assets/well.png', 500, 425)
 
-let sword = document.createElement('img')
-sword.src='assets/sword.png'
-sword.position='fixed'
-sword.left='500px'
-sword.bottom='405px'
-document.body.append(sword)
+function newItem(url, left, bottom){
+    let item = document.createElement('img')
+    item.src=url
+    item.style.position='fixed'
+    item.style.left=left + 'px'
+    item.style.bottom=bottom + 'px'
+    document.body.append(item)
 
-sword.addEventListener('click', function(){
-    sword.remove()
-})
+    item.addEventListener('click',function(){
+        item.remove()
+    })
+}
+
+
